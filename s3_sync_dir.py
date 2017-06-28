@@ -1,4 +1,4 @@
-#!/proj/systems/apps/anaconda/bin/python
+#!/usr/bin/env python
 #
 # Script to sync an entire directory to a s3 bucket and optionally delete local files
 #
