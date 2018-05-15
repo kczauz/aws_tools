@@ -233,6 +233,8 @@ if __name__ == "__main__":
                         help="Specify which bucket to place objects into")
     required_named.add_argument("--boto-config-file", default=None, required=True,
                         help="Specify a boto config file that contains your aws credentials")
+    required_named.add_argument("--base-key", default=None,
+                        help="Specify a base key to prepend to the s3 object key")
 
     # optional arguments
     parser.add_argument("-v", "--verbosity", action="count", default=0,
@@ -241,8 +243,6 @@ if __name__ == "__main__":
                         help="only upload files older than a specified number of days")
     parser.add_argument("--delete-local-files", action='store_true',
                     help="Delete the local file if the file is successfully uploaded to s3 or it already exists in s3")
-    parser.add_argument("--base-key", default=None,
-                        help="Specify a base key to prepend to the s3 object key")
     parser.add_argument("--aws-kms-encryption-key", default=None,
                         help="Specify an aws kms encryption key id to use to encrypt data uploaded to s3")
     parser.add_argument("--num-procs", default=5, type=int,
